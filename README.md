@@ -1,4 +1,4 @@
-# Soren Wholesale — Official Website
+# Desire Wholesale — Official Website
 
 Static site published via GitHub Pages: https://soren1985.github.io/
 
