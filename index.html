@@ -11,11 +11,11 @@
     --text:#eceaf1; --muted:#a49fb3; --accent:#c8a24a; --accent2:#e5c878;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+  body{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
   a{color:var(--accent2);text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
   header{position:sticky;top:0;background:rgba(15,14,19,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
   .logo{font-size:22px;font-weight:800;letter-spacing:3px;color:var(--text)}
   .logo span{color:var(--accent)}
   .nav-links{display:flex;gap:26px;font-size:14px}
@@ -24,6 +24,9 @@
   .btn{display:inline-block;background:var(--accent);color:#171207;font-weight:700;padding:11px 22px;border-radius:8px;font-size:15px}
   .btn:hover{background:var(--accent2)}
   .btn.ghost{background:transparent;color:var(--accent2);border:1px solid var(--accent)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .lang button{background:transparent;border:0;color:var(--muted);padding:8px 13px;font-size:13px;cursor:pointer;font-weight:700}
+  .lang button.on{background:var(--accent);color:#171207}
   .hero{padding:84px 0 64px;text-align:center;background:radial-gradient(ellipse at top,#241f31 0%,var(--bg) 62%)}
   .hero .kicker{color:var(--accent);letter-spacing:4px;font-size:13px;font-weight:700;text-transform:uppercase}
   .hero h1{font-size:42px;line-height:1.2;margin:18px auto 16px;max-width:760px}
@@ -62,127 +65,133 @@
   <div class="wrap nav">
     <div class="logo">SOREN<span>.</span></div>
     <nav class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#factory">Factory</a>
-      <a href="#oem">OEM / ODM</a>
-      <a href="#process">How It Works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="#products" data-i18n="nav_products">Products</a>
+      <a href="#factory" data-i18n="nav_factory">Factory</a>
+      <a href="#oem" data-i18n="nav_oem">OEM / ODM</a>
+      <a href="#process" data-i18n="nav_process">How It Works</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
-    <a class="btn" href="#contact">Get a Quote</a>
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="lang">
+        <button id="btn-en" class="on" onclick="setLang('en')">EN</button>
+        <button id="btn-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <a class="btn" href="#contact" data-i18n="nav_quote">Get a Quote</a>
+    </div>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <div class="kicker">Wholesale Only · Guangzhou, China</div>
-    <h1>Adult products wholesale, factory-direct from China — without the usual hassle.</h1>
-    <p>We supply sex toys, lingerie, bondage and novelty lines to retailers and online sellers worldwide, backed by our partner factory in Shenzhen. Low minimums, mixed cartons, private label options, and honest shipping quotes before you pay.</p>
+    <div class="kicker" data-i18n="hero_kicker">Wholesale Only · Guangzhou, China</div>
+    <h1 data-i18n="hero_h1">Adult products wholesale, factory-direct from China — without the usual hassle.</h1>
+    <p data-i18n="hero_p">We supply sex toys, lingerie, bondage and novelty lines to retailers and online sellers worldwide, backed by our partner factory in Shenzhen. Low minimums, mixed cartons, private label options, and honest shipping quotes before you pay.</p>
     <div class="cta">
-      <a class="btn" href="mailto:gosoren2026@gmail.com?subject=Wholesale%20inquiry">Email Us</a>
-      <a class="btn ghost" href="https://wa.me/8615001169405" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="btn" href="mailto:gosoren2026@gmail.com?subject=Wholesale%20inquiry" data-i18n="hero_email">Email Us</a>
+      <a class="btn ghost" href="https://wa.me/8615001169405" target="_blank" rel="noopener" data-i18n="hero_wa">WhatsApp Us</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>Since 2013</b><small>Factory established</small></div>
-      <div class="stat"><b>20 pcs</b><small>Minimum order, mixing allowed</small></div>
-      <div class="stat"><b>ISO 9001</b><small>CE · RoHS · FCC certified</small></div>
-      <div class="stat"><b>5–8 days</b><small>Express delivery to the US</small></div>
+      <div class="stat"><b data-i18n="st1b">Since 2013</b><small data-i18n="st1s">Factory established</small></div>
+      <div class="stat"><b data-i18n="st2b">20 pcs</b><small data-i18n="st2s">Minimum order, mixing allowed</small></div>
+      <div class="stat"><b data-i18n="st3b">ISO 9001</b><small data-i18n="st3s">CE · RoHS · FCC certified</small></div>
+      <div class="stat"><b data-i18n="st4b">5–8 days</b><small data-i18n="st4s">Express delivery to the US</small></div>
     </div>
   </div>
 </div>
 
 <section id="products">
   <div class="wrap">
-    <h2>Product range</h2>
-    <p class="sub">Ask us for the full catalogue and price list — we reply with the items, prices and minimums for each line.</p>
+    <h2 data-i18n="prod_h2">Product range</h2>
+    <p class="sub" data-i18n="prod_sub">Ask us for the full catalogue and price list — we reply with the items, prices and minimums for each line.</p>
     <div class="grid">
-      <div class="card"><div class="ico">◆</div><h3>Sex Toys</h3><p>Vibrators, clitoral stimulators, remote-control and wearable toys, anal plugs and prostate massagers, kegel balls, masturbators and couples' toys — from entry-level to premium.</p></div>
-      <div class="card"><div class="ico">◆</div><h3>Lingerie</h3><p>Sexy lingerie sets, bodystockings, costumes and hosiery, in a full size range.</p></div>
-      <div class="card"><div class="ico">◆</div><h3>Bondage &amp; Novelties</h3><p>Restraints, fetish accessories and novelty items that round out a store's range.</p></div>
-      <div class="card"><div class="ico">◆</div><h3>Condoms</h3><p>Full-pallet and carton pricing available for volume buyers.</p></div>
+      <div class="card"><div class="ico">◆</div><h3 data-i18n="c1h">Sex Toys</h3><p data-i18n="c1p">Vibrators, clitoral stimulators, remote-control and wearable toys, anal plugs and prostate massagers, kegel balls, masturbators and couples' toys — from entry-level to premium.</p></div>
+      <div class="card"><div class="ico">◆</div><h3 data-i18n="c2h">Lingerie</h3><p data-i18n="c2p">Sexy lingerie sets, bodystockings, costumes and hosiery, in a full size range.</p></div>
+      <div class="card"><div class="ico">◆</div><h3 data-i18n="c3h">Bondage &amp; Novelties</h3><p data-i18n="c3p">Restraints, fetish accessories and novelty items that round out a store's range.</p></div>
+      <div class="card"><div class="ico">◆</div><h3 data-i18n="c4h">Condoms</h3><p data-i18n="c4p">Full-pallet and carton pricing available for volume buyers.</p></div>
     </div>
   </div>
 </section>
 
 <section id="factory" style="background:var(--panel)">
   <div class="wrap">
-    <h2>Backed by a real factory</h2>
-    <p class="sub">Our main toy lines are produced by our partner factory, <b>Shenzhen Y.Love Technology Co., Ltd.</b> — a manufacturer established in 2013 with around 300 employees and a complete in-house production chain: its own design and R&amp;D team, liquid and solid silicone production lines, assembly and packaging lines.</p>
+    <h2 data-i18n="fac_h2">Backed by a real factory</h2>
+    <p class="sub" data-i18n="fac_sub">Our main toy lines are produced by our partner factory, Shenzhen Y.Love Technology Co., Ltd. — a manufacturer established in 2013 with around 300 employees and a complete in-house production chain: its own design and R&amp;D team, liquid and solid silicone production lines, assembly and packaging lines.</p>
     <div class="grid">
-      <div class="card"><h3>Certified production</h3><p>ISO 9001 quality management, with CE, RoHS and FCC product certifications — suitable for mainstream e-commerce platforms and retail markets in most countries.</p></div>
-      <div class="card"><h3>Design &amp; R&amp;D in-house</h3><p>An experienced design team develops new models in-house, so the range keeps moving and OEM ideas can actually be built.</p></div>
-      <div class="card"><h3>Export-focused</h3><p>More than half of factory output is exported. Packaging and instruction manuals are in English as standard.</p></div>
-      <div class="card"><h3>Checked before it ships</h3><p>Standardized processes and strict production control at the factory — plus we inspect your order and send you photos before dispatch.</p></div>
+      <div class="card"><h3 data-i18n="f1h">Certified production</h3><p data-i18n="f1p">ISO 9001 quality management, with CE, RoHS and FCC product certifications — suitable for mainstream e-commerce platforms and retail markets in most countries.</p></div>
+      <div class="card"><h3 data-i18n="f2h">Design &amp; R&amp;D in-house</h3><p data-i18n="f2p">An experienced design team develops new models in-house, so the range keeps moving and OEM ideas can actually be built.</p></div>
+      <div class="card"><h3 data-i18n="f3h">Export-focused</h3><p data-i18n="f3p">More than half of factory output is exported. Packaging and instruction manuals are in English as standard.</p></div>
+      <div class="card"><h3 data-i18n="f4h">Checked before it ships</h3><p data-i18n="f4p">Standardized processes and strict production control at the factory — plus we inspect your order and send you photos before dispatch.</p></div>
     </div>
   </div>
 </section>
 
 <section id="why">
   <div class="wrap">
-    <h2>Why retailers work with us</h2>
-    <p class="sub">We are a small, hands-on team in Guangzhou. You talk to a person, not a ticket system.</p>
+    <h2 data-i18n="why_h2">Why retailers work with us</h2>
+    <p class="sub" data-i18n="why_sub">We are a small, hands-on team in Guangzhou. You talk to a person, not a ticket system.</p>
     <div class="grid">
-      <div class="card"><h3>Low MOQ, mixed cartons</h3><p>Start from just 20 pieces per order and mix styles and colors freely. No fixed minimum order amount for trial orders.</p></div>
-      <div class="card"><h3>Private label / OEM</h3><p>Your logo on products, labels or full custom packaging. Tell us which route you have in mind and we'll quote it properly.</p></div>
-      <div class="card"><h3>Samples first</h3><p>Order a sample package before committing — and the sample fee is credited toward your first order.</p></div>
-      <div class="card"><h3>Honest shipping quotes</h3><p>Shipping is charged at actual cost. You get the exact figure for each shipping option before you decide — no surprises afterwards.</p></div>
+      <div class="card"><h3 data-i18n="w1h">Low MOQ, mixed cartons</h3><p data-i18n="w1p">Start from just 20 pieces per order and mix styles and colors freely. No fixed minimum order amount for trial orders.</p></div>
+      <div class="card"><h3 data-i18n="w2h">Private label / OEM</h3><p data-i18n="w2p">Your logo on products, labels or full custom packaging. Tell us which route you have in mind and we'll quote it properly.</p></div>
+      <div class="card"><h3 data-i18n="w3h">Samples first</h3><p data-i18n="w3p">Order a sample package before committing — and the sample fee is credited toward your first order.</p></div>
+      <div class="card"><h3 data-i18n="w4h">Honest shipping quotes</h3><p data-i18n="w4p">Shipping is charged at actual cost. You get the exact figure for each shipping option before you decide — no surprises afterwards.</p></div>
     </div>
   </div>
 </section>
 
 <section id="oem" style="background:var(--panel)">
   <div class="wrap">
-    <h2>OEM / ODM, step by step</h2>
-    <p class="sub">From your idea to a finished product under your brand — the factory's proven development process.</p>
+    <h2 data-i18n="oem_h2">OEM / ODM, step by step</h2>
+    <p class="sub" data-i18n="oem_sub">From your idea to a finished product under your brand — the factory's proven development process.</p>
     <div class="steps">
-      <div class="step"><span class="n">1</span><h3>Your concept</h3><p>Share your idea, target market and budget — or reference items you'd like to improve on.</p></div>
-      <div class="step"><span class="n">2</span><h3>Quotation</h3><p>Detailed quote covering size, functions, colors and mold costs.</p></div>
-      <div class="step"><span class="n">3</span><h3>3D design</h3><p>Industrial design and a 3D model for your review, revised until the details are right.</p></div>
-      <div class="step"><span class="n">4</span><h3>Prototype</h3><p>A 1:1 3D-printed sample sent to you for confirmation. Design patent application supported.</p></div>
-      <div class="step"><span class="n">5</span><h3>Mold &amp; production</h3><p>Mold making, pre-production sample for your OK, then bulk production with progress updates and item-by-item quality testing.</p></div>
-      <div class="step"><span class="n">6</span><h3>Shipment</h3><p>Packing, booking and all export/clearance documents prepared for you.</p></div>
+      <div class="step"><span class="n">1</span><h3 data-i18n="o1h">Your concept</h3><p data-i18n="o1p">Share your idea, target market and budget — or reference items you'd like to improve on.</p></div>
+      <div class="step"><span class="n">2</span><h3 data-i18n="o2h">Quotation</h3><p data-i18n="o2p">Detailed quote covering size, functions, colors and mold costs.</p></div>
+      <div class="step"><span class="n">3</span><h3 data-i18n="o3h">3D design</h3><p data-i18n="o3p">Industrial design and a 3D model for your review, revised until the details are right.</p></div>
+      <div class="step"><span class="n">4</span><h3 data-i18n="o4h">Prototype</h3><p data-i18n="o4p">A 1:1 3D-printed sample sent to you for confirmation. Design patent application supported.</p></div>
+      <div class="step"><span class="n">5</span><h3 data-i18n="o5h">Mold &amp; production</h3><p data-i18n="o5p">Mold making, pre-production sample for your OK, then bulk production with progress updates and item-by-item quality testing.</p></div>
+      <div class="step"><span class="n">6</span><h3 data-i18n="o6h">Shipment</h3><p data-i18n="o6p">Packing, booking and all export/clearance documents prepared for you.</p></div>
     </div>
   </div>
 </section>
 
 <section id="process">
   <div class="wrap">
-    <h2>How ordering works</h2>
-    <p class="sub">From first message to tracking number, in five steps.</p>
+    <h2 data-i18n="proc_h2">How ordering works</h2>
+    <p class="sub" data-i18n="proc_sub">From first message to tracking number, in five steps.</p>
     <div class="steps">
-      <div class="step"><span class="n">1</span><h3>Send a shortlist</h3><p>Tell us which items interest you — or ask for the catalogue and pick from it.</p></div>
-      <div class="step"><span class="n">2</span><h3>Get a full quote</h3><p>Item prices plus shipping options side by side, so you can compare total cost.</p></div>
-      <div class="step"><span class="n">3</span><h3>Samples (optional)</h3><p>Check quality first with a sample package. The fee counts toward your first order.</p></div>
-      <div class="step"><span class="n">4</span><h3>Confirm &amp; pay</h3><p>Confirm the order and pay by bank transfer or Wise.</p></div>
-      <div class="step"><span class="n">5</span><h3>QC photos &amp; shipping</h3><p>We inspect, send photos for your OK, then ship with tracking.</p></div>
+      <div class="step"><span class="n">1</span><h3 data-i18n="p1h">Send a shortlist</h3><p data-i18n="p1p">Tell us which items interest you — or ask for the catalogue and pick from it.</p></div>
+      <div class="step"><span class="n">2</span><h3 data-i18n="p2h">Get a full quote</h3><p data-i18n="p2p">Item prices plus shipping options side by side, so you can compare total cost.</p></div>
+      <div class="step"><span class="n">3</span><h3 data-i18n="p3h">Samples (optional)</h3><p data-i18n="p3p">Check quality first with a sample package. The fee counts toward your first order.</p></div>
+      <div class="step"><span class="n">4</span><h3 data-i18n="p4h">Confirm &amp; pay</h3><p data-i18n="p4p">Confirm the order and pay by bank transfer or Wise.</p></div>
+      <div class="step"><span class="n">5</span><h3 data-i18n="p5h">QC photos &amp; shipping</h3><p data-i18n="p5p">We inspect, send photos for your OK, then ship with tracking.</p></div>
     </div>
   </div>
 </section>
 
 <section id="shipping" style="background:var(--panel)">
   <div class="wrap">
-    <h2>Shipping to the US &amp; worldwide</h2>
-    <p class="sub">Three ways to ship, depending on order size and how fast you need it. One honest note: customs occasionally spot-checks this product category, which can add 2–3 days — we'll keep you posted with tracking either way.</p>
+    <h2 data-i18n="ship_h2">Shipping to the US &amp; worldwide</h2>
+    <p class="sub" data-i18n="ship_sub">Three ways to ship, depending on order size and how fast you need it. One honest note: customs occasionally spot-checks this product category, which can add 2–3 days — we'll keep you posted with tracking either way.</p>
     <div class="grid">
-      <div class="card"><h3>Express courier</h3><p>DHL / FedEx / UPS — best for samples and small orders. About <b>5–8 days</b> door to door.</p></div>
-      <div class="card"><h3>Air freight</h3><p>Through our regular forwarder — for medium orders. About <b>10–15 days</b>, cheaper per kilo.</p></div>
-      <div class="card"><h3>Sea freight</h3><p>For large bulk orders. About <b>25–35 days</b> at the lowest cost.</p></div>
+      <div class="card"><h3 data-i18n="s1h">Express courier</h3><p data-i18n="s1p">DHL / FedEx / UPS — best for samples and small orders. About 5–8 days door to door.</p></div>
+      <div class="card"><h3 data-i18n="s2h">Air freight</h3><p data-i18n="s2p">Through our regular forwarder — for medium orders. About 10–15 days, cheaper per kilo.</p></div>
+      <div class="card"><h3 data-i18n="s3h">Sea freight</h3><p data-i18n="s3p">For large bulk orders. About 25–35 days at the lowest cost.</p></div>
     </div>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
-    <h2>FAQ</h2>
-    <p class="sub">The questions every new buyer asks us.</p>
+    <h2 data-i18n="faq_h2">FAQ</h2>
+    <p class="sub" data-i18n="faq_sub">The questions every new buyer asks us.</p>
     <div class="faq">
-      <details><summary>What is your minimum order quantity?</summary><p>For existing styles and colors, the minimum is 20 pieces per order, and you can mix different items and colors to reach it. There is no fixed minimum order amount for a first trial order. Custom and private-label products have their own minimums depending on the requirements — ask us about the item you have in mind.</p></details>
-      <details><summary>Can I get samples before placing an order?</summary><p>Yes. Pick items from the catalogue, or let us put together a best-sellers sample package. The sample fee is credited toward your first order.</p></details>
-      <details><summary>Do you offer private label?</summary><p>Yes — logo on the product, your own labels and tags, or a full packaging change. Each route has a different minimum and cost, so tell us what you're planning and roughly how many pieces, and we'll work out an exact quote.</p></details>
-      <details><summary>Are your products certified?</summary><p>Our factory is ISO 9001 certified, and products carry CE, RoHS and FCC certifications suitable for mainstream sales channels in most markets.</p></details>
-      <details><summary>How much is shipping, and how long does it take?</summary><p>Shipping is charged at actual cost and depends on weight and destination. Express takes about 5–8 days to the US, air freight 10–15 days, and sea freight 25–35 days for bulk. Send us your shortlist and we'll quote the exact shipping for each option before you decide.</p></details>
-      <details><summary>How do I pay?</summary><p>Bank transfer or Wise. We confirm the total — items plus shipping — before you pay anything.</p></details>
-      <details><summary>Is the packaging in English?</summary><p>Yes. Products come with English packaging and English manuals as standard.</p></details>
+      <details><summary data-i18n="q1q">What is your minimum order quantity?</summary><p data-i18n="q1a">For existing styles and colors, the minimum is 20 pieces per order, and you can mix different items and colors to reach it. There is no fixed minimum order amount for a first trial order. Custom and private-label products have their own minimums depending on the requirements — ask us about the item you have in mind.</p></details>
+      <details><summary data-i18n="q2q">Can I get samples before placing an order?</summary><p data-i18n="q2a">Yes. Pick items from the catalogue, or let us put together a best-sellers sample package. The sample fee is credited toward your first order.</p></details>
+      <details><summary data-i18n="q3q">Do you offer private label?</summary><p data-i18n="q3a">Yes — logo on the product, your own labels and tags, or a full packaging change. Each route has a different minimum and cost, so tell us what you're planning and roughly how many pieces, and we'll work out an exact quote.</p></details>
+      <details><summary data-i18n="q4q">Are your products certified?</summary><p data-i18n="q4a">Our factory is ISO 9001 certified, and products carry CE, RoHS and FCC certifications suitable for mainstream sales channels in most markets.</p></details>
+      <details><summary data-i18n="q5q">How much is shipping, and how long does it take?</summary><p data-i18n="q5a">Shipping is charged at actual cost and depends on weight and destination. Express takes about 5–8 days to the US, air freight 10–15 days, and sea freight 25–35 days for bulk. Send us your shortlist and we'll quote the exact shipping for each option before you decide.</p></details>
+      <details><summary data-i18n="q6q">How do I pay?</summary><p data-i18n="q6a">Bank transfer or Wise. We confirm the total — items plus shipping — before you pay anything.</p></details>
+      <details><summary data-i18n="q7q">Is the packaging in English?</summary><p data-i18n="q7a">Yes. Products come with English packaging and English manuals as standard.</p></details>
     </div>
   </div>
 </section>
@@ -190,8 +199,8 @@
 <section id="contact" style="padding-top:0">
   <div class="wrap">
     <div class="contact">
-      <h2>Ask for the catalogue</h2>
-      <p>Tell us a little about your store and what you're looking for. We'll send the catalogue and price list, and answer any questions — no obligation.</p>
+      <h2 data-i18n="ct_h2">Ask for the catalogue</h2>
+      <p data-i18n="ct_p">Tell us a little about your store and what you're looking for. We'll send the catalogue and price list, and answer any questions — no obligation.</p>
       <div class="cta" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
         <a class="btn" href="mailto:gosoren2026@gmail.com?subject=Wholesale%20inquiry">gosoren2026@gmail.com</a>
         <a class="btn ghost" href="https://wa.me/8615001169405" target="_blank" rel="noopener">WhatsApp: +86 150 0116 9405</a>
@@ -202,10 +211,79 @@
 
 <footer>
   <div class="wrap">
-    Soren Wholesale · Guangzhou, China · Partner factory: Shenzhen Y.Love Technology Co., Ltd. · Business-to-business only. You must be of legal age in your jurisdiction to purchase adult products.<br>
-    © 2026 Soren Wholesale. All rights reserved.
+    <span data-i18n="ft_1">Soren Wholesale · Guangzhou, China · Partner factory: Shenzhen Y.Love Technology Co., Ltd. · Business-to-business only. You must be of legal age in your jurisdiction to purchase adult products.</span><br>
+    © 2026 Soren Wholesale. <span data-i18n="ft_2">All rights reserved.</span>
   </div>
 </footer>
+
+<script>
+var ZH = {
+  nav_products:"产品", nav_factory:"工厂", nav_oem:"OEM / ODM", nav_process:"下单流程", nav_faq:"常见问题", nav_contact:"联系我们", nav_quote:"获取报价",
+  hero_kicker:"只做批发 · 中国广州",
+  hero_h1:"成人用品批发，中国工厂直供——省去一切麻烦。",
+  hero_p:"我们为全球零售商和电商卖家供应情趣玩具、情趣内衣、束缚用品和新奇产品，背后是深圳的合作工厂。起订量低、可混批、支持贴牌，付款前先报实价运费。",
+  hero_email:"邮件联系", hero_wa:"WhatsApp 联系",
+  st1b:"始于 2013 年", st1s:"工厂成立年份", st2b:"20 件", st2s:"最低起订，可混批", st3b:"ISO 9001", st3s:"CE · RoHS · FCC 认证", st4b:"5–8 天", st4s:"快递送达美国",
+  prod_h2:"产品范围", prod_sub:"向我们索取完整图册和价格表——我们会把每个品类的产品、价格和起订量发给你。",
+  c1h:"情趣玩具", c1p:"震动棒、阴蒂刺激器、遥控和穿戴玩具、肛塞和前列腺按摩器、凯格尔球、飞机杯和情侣玩具——从入门级到高端款都有。",
+  c2h:"情趣内衣", c2p:"性感内衣套装、连体网衣、角色服装和丝袜，尺码齐全。",
+  c3h:"束缚与新奇产品", c3p:"束缚用品、恋物配件和新奇小物，帮你的店铺补齐品类。",
+  c4h:"安全套", c4p:"大批量客户可谈整托和整箱价格。",
+  fac_h2:"背后是真工厂", fac_sub:"我们的主要玩具产品线由合作工厂深圳市妍爱科技有限公司生产——2013 年成立，约 300 名员工，拥有完整的自主生产链：自有设计研发团队、液态和固态硅胶生产线、组装线和包装线。",
+  f1h:"认证齐全的生产", f1p:"ISO 9001 质量管理体系，产品通过 CE、RoHS、FCC 认证——适合大多数国家的主流电商平台和零售市场。",
+  f2h:"自有设计研发", f2p:"经验丰富的设计团队自主开发新款，产品线持续更新，OEM 想法也能真正落地做出来。",
+  f3h:"以出口为主", f3p:"工厂一半以上产量用于出口。包装和说明书标配英文。",
+  f4h:"发货前验货", f4p:"工厂有标准化流程和严格品控——再加上我们会在发货前验你的货、拍照发你确认。",
+  why_h2:"为什么零售商跟我们合作", why_sub:"我们是广州的一个小而精的团队。你对接的是真人，不是工单系统。",
+  w1h:"起订量低，可混批", w1p:"每单 20 件起，款式和颜色随便混。试单没有最低总金额要求。",
+  w2h:"贴牌 / OEM", w2p:"产品上印你的 logo、用你的标签吊牌，或者整个包装换掉。告诉我们你想走哪种，我们给你报准价。",
+  w3h:"先拿样品", w3p:"下单前先订样品包验货——样品费可以在首单里抵扣。",
+  w4h:"运费报实价", w4p:"运费按实际成本收。你决定之前，每种运输方式的准确价格都会先报给你——后面不会有意外收费。",
+  oem_h2:"OEM / ODM 定制流程", oem_sub:"从你的想法到贴上你品牌的产品——工厂成熟的开发流程。",
+  o1h:"你的概念", o1p:"把你的想法、目标市场和预算告诉我们——或者给我们你想改进的参考产品。",
+  o2h:"报价", o2p:"详细报价，涵盖尺寸、功能、颜色和模具费用。",
+  o3h:"3D 设计", o3p:"工业设计和 3D 模型供你审核，反复修改直到细节对版。",
+  o4h:"打样", o4p:"1:1 的 3D 打印样品寄给你确认。支持外观设计专利申请。",
+  o5h:"开模与生产", o5p:"开模、产前样确认，然后大货生产，进度随时同步，每件产品都做质量检测。",
+  o6h:"发货", o6p:"包装、订舱和全套出口/清关文件都为你备好。",
+  proc_h2:"下单流程", proc_sub:"从第一条消息到拿到单号，一共五步。",
+  p1h:"发意向清单", p1p:"告诉我们你对哪些款感兴趣——或者先要图册，从图册里挑。",
+  p2h:"拿到完整报价", p2p:"货价加几种运费并排报给你，方便你比总价。",
+  p3h:"样品（可选）", p3p:"先订样品包验质量。样品费在首单里抵扣。",
+  p4h:"确认并付款", p4p:"确认订单，通过银行转账或 Wise 付款。",
+  p5h:"验货拍照并发货", p5p:"我们验货、拍照发你确认，然后发货并提供单号。",
+  ship_h2:"发往美国和全球", ship_sub:"三种运输方式，按订单大小和时效选。有一点如实说明：海关偶尔会抽查这个品类，可能多花 2–3 天——不管怎样我们都会用单号同步你进度。",
+  s1h:"国际快递", s1p:"DHL / FedEx / UPS——适合样品和小单。大约 5–8 天送到门。",
+  s2h:"空运", s2p:"走我们长期合作的货代——适合中等订单。大约 10–15 天，每公斤更便宜。",
+  s3h:"海运", s3p:"适合大批量订单。大约 25–35 天，成本最低。",
+  faq_h2:"常见问题", faq_sub:"每个新买家都会问的问题。",
+  q1q:"最低起订量是多少？", q1a:"现有款式和颜色，每单最低 20 件，可以混不同款和颜色凑够。首单试单没有最低总金额要求。定制和贴牌产品按具体要求另定起订量——把你想做的款告诉我们即可。",
+  q2q:"下单前可以先拿样品吗？", q2a:"可以。从图册里挑款，或者让我们配一个畅销款样品包。样品费可以在首单中抵扣。",
+  q3q:"你们做贴牌吗？", q3a:"做——产品上印 logo、用你自己的标签吊牌，或者整个包装换掉。每种方式的起订量和费用不同，把你的想法和大概数量告诉我们，我们给你算准确报价。",
+  q4q:"产品有认证吗？", q4a:"我们的工厂通过 ISO 9001 认证，产品带有 CE、RoHS、FCC 认证，适合大多数市场的主流销售渠道。",
+  q5q:"运费多少？要多久？", q5a:"运费按实际成本收，取决于重量和目的地。发美国：快递约 5–8 天，空运 10–15 天，海运大货 25–35 天。把你的意向清单发给我们，你决定之前我们会把每种方式的准确运费报给你。",
+  q6q:"怎么付款？", q6a:"银行转账或 Wise。付款前我们会把货款加运费的总价跟你确认清楚。",
+  q7q:"包装是英文的吗？", q7a:"是的。产品标配英文包装和英文说明书。",
+  ct_h2:"索取图册", ct_p:"简单说一下你的店铺和你在找什么产品。我们会把图册和价格表发给你，并回答你的问题——没有任何义务。",
+  ft_1:"Soren Wholesale · 中国广州 · 合作工厂：深圳市妍爱科技有限公司 · 只做企业批发。购买成人用品须达到你所在地区的法定年龄。",
+  ft_2:"版权所有。"
+};
+function setLang(lang){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k = el.getAttribute('data-i18n');
+    if(!el.dataset.en) el.dataset.en = el.innerHTML;
+    el.innerHTML = (lang === 'zh' && ZH[k]) ? ZH[k] : el.dataset.en;
+  });
+  document.getElementById('btn-en').classList.toggle('on', lang === 'en');
+  document.getElementById('btn-zh').classList.toggle('on', lang === 'zh');
+  document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
+  try{ localStorage.setItem('lang', lang); }catch(e){}
+}
+try{
+  var saved = localStorage.getItem('lang');
+  if(saved === 'zh') setLang('zh');
+}catch(e){}
+</script>
 
 </body>
 </html>
