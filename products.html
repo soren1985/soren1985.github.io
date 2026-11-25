@@ -72,6 +72,9 @@ section{padding:64px 0}
 .contact-box p{color:#e9dcf5;margin:10px auto 24px;max-width:540px}
 footer{background:#202020;color:#a9a9a9;padding:38px 0;font-size:13px;text-align:center}
 @media(max-width:680px){.nav-links{display:none}.hero h1{font-size:29px}.pimg img{height:240px}}
+.switcher{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:6px 0 22px}
+.switcher a{padding:10px 22px;border-radius:999px;border:1.5px solid var(--purple);color:var(--purple);font-weight:700;text-decoration:none;font-size:15px}
+.switcher a.on{background:var(--purple);color:#fff}
 </style>
 </head>
 <body>
@@ -86,6 +89,7 @@ footer{background:#202020;color:#a9a9a9;padding:38px 0;font-size:13px;text-align
 
 <section style="padding-top:44px"><div class="wrap">
   <div class="sec-head"><h2 data-i18n="pp_h1">All Products</h2><div class="bar"></div><p data-i18n="pp_sub">Wholesale range from our partner factory · Prices in USD · MOQ 20 pcs, mixing allowed — send an inquiry for an exact quote</p></div>
+  <div class="switcher"><a href="products.html" class="on" data-i18n="sw_toys">Sex Toys</a><a href="condoms.html" data-i18n="sw_condoms">Condoms</a><a href="lingerie.html" data-i18n="sw_lingerie">Sexy Lingerie</a></div>
   <div class="filters">
     <button class="on" onclick="filterCat(this,'all')" data-i18n="fa">All</button>
     <button onclick="filterCat(this,'vibrators')" data-i18n="fv">Vibrators</button>
@@ -494,7 +498,7 @@ footer{background:#202020;color:#a9a9a9;padding:38px 0;font-size:13px;text-align
 </div></footer>
 
 <script>
-var ZH = {"tb_mail": "邮件联系我们", "nav_products": "产品", "nav_factory": "工厂", "nav_oem": "OEM / ODM", "nav_process": "下单流程", "nav_faq": "常见问题", "nav_contact": "联系我们", "inquire": "发询盘", "pp_h1": "全部产品", "pp_sub": "合作工厂的批发产品线 · 价格为美元批发价 · 起订量 20 件可混批，准确报价请发询盘确认", "fa": "全部", "fv": "震动玩具", "fk": "凯格尔球/跳蛋", "fan": "肛塞/前列腺", "fc": "情侣玩具", "fm": "男用产品", "ct_h2": "索取图册", "ct_p": "简单说一下你的店铺和你在找什么产品。我们会把图册和价格表发给你，并回答你的问题——没有任何义务。", "ft_1": "Soren Wholesale · 中国广州 · 合作工厂：深圳市妍爱科技有限公司 · 只做企业批发。购买成人用品须达到你所在地区的法定年龄。", "ft_2": "版权所有。"};
+var ZH = {"tb_mail": "邮件联系我们", "nav_products": "产品", "nav_factory": "工厂", "nav_oem": "OEM / ODM", "nav_process": "下单流程", "nav_faq": "常见问题", "nav_contact": "联系我们", "inquire": "发询盘", "pp_h1": "全部产品", "sw_toys": "成人玩具", "sw_condoms": "安全套", "sw_lingerie": "情趣内衣", "pp_sub": "合作工厂的批发产品线 · 价格为美元批发价 · 起订量 20 件可混批，准确报价请发询盘确认", "fa": "全部", "fv": "震动玩具", "fk": "凯格尔球/跳蛋", "fan": "肛塞/前列腺", "fc": "情侣玩具", "fm": "男用产品", "ct_h2": "索取图册", "ct_p": "简单说一下你的店铺和你在找什么产品。我们会把图册和价格表发给你，并回答你的问题——没有任何义务。", "ft_1": "Soren Wholesale · 中国广州 · 合作工厂：深圳市妍爱科技有限公司 · 只做企业批发。购买成人用品须达到你所在地区的法定年龄。", "ft_2": "版权所有。"};
 function setLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var k = el.getAttribute('data-i18n');
